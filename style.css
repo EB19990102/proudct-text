@@ -1,4 +1,3 @@
-
 :root {
     --bg-color: #f0f2f5;
     --container-bg: #ffffff;
@@ -11,6 +10,8 @@
     --btn-shadow-hover: rgba(0, 123, 255, 0.5);
     --container-shadow: rgba(0, 0, 0, 0.1);
     --number-shadow: rgba(0, 0, 0, 0.2);
+    --input-border: #d0d7e2;
+    --input-bg: #ffffff;
 }
 
 [data-theme="dark"] {
@@ -25,6 +26,8 @@
     --btn-shadow-hover: rgba(59, 130, 246, 0.5);
     --container-shadow: rgba(0, 0, 0, 0.4);
     --number-shadow: rgba(0, 0, 0, 0.35);
+    --input-border: #3a4560;
+    --input-bg: #141b2b;
 }
 
 body {
@@ -34,8 +37,9 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh;
     margin: 0;
+    padding: 24px 16px;
 }
 
 .container {
@@ -45,6 +49,7 @@ body {
     border-radius: 15px;
     box-shadow: 0 10px 30px var(--container-shadow);
     color: var(--text-color);
+    width: min(100%, 700px);
 }
 
 .theme-toggle-wrap {
@@ -95,20 +100,70 @@ h1 {
     box-shadow: 0 4px 15px var(--number-shadow);
 }
 
-#generate-btn {
+#generate-btn,
+.submit-btn {
     background-color: var(--btn-bg);
     color: white;
     border: none;
     padding: 15px 30px;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     border-radius: 10px;
     cursor: pointer;
     transition: all 0.3s ease;
     box-shadow: 0 4px 15px var(--btn-shadow);
 }
 
-#generate-btn:hover {
+#generate-btn:hover,
+.submit-btn:hover {
     background-color: var(--btn-hover-bg);
     transform: translateY(-2px);
     box-shadow: 0 6px 20px var(--btn-shadow-hover);
+}
+
+.partnership-section {
+    margin-top: 44px;
+    border-top: 1px solid var(--input-border);
+    padding-top: 28px;
+    text-align: left;
+}
+
+.partnership-section h2 {
+    margin: 0 0 8px;
+    font-size: 1.5rem;
+}
+
+.partnership-desc {
+    margin: 0 0 16px;
+}
+
+.partnership-form {
+    display: grid;
+    gap: 10px;
+}
+
+.partnership-form label {
+    font-weight: 600;
+}
+
+.partnership-form input,
+.partnership-form textarea {
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid var(--input-border);
+    border-radius: 8px;
+    padding: 12px;
+    font-size: 1rem;
+    background: var(--input-bg);
+    color: var(--text-color);
+}
+
+.partnership-form input:focus,
+.partnership-form textarea:focus {
+    outline: 2px solid var(--btn-bg);
+    outline-offset: 1px;
+}
+
+.submit-btn {
+    margin-top: 6px;
+    width: 100%;
 }
